@@ -17,6 +17,8 @@ The implementation for *similarity flooding via entity compositions* is dependen
 * **cudatoolkit** (*tested with v10.2.89*)
 * **cupy** (*tested with v12.1.0*)
 
+The implementation for *AliNet + SPA* is dependent on [AliNet](https://github.com/nju-websoft/AliNet).
+
 ## Running code
 
 ### Similarity flooding via entity compositions
@@ -31,6 +33,20 @@ To run GCNFlood on DBP15K ZH-EN, please execute:
 
 ```bash
 python embed_sf.py --input ./dataset/dbp15k/zh_en/ --model GCN
+```
+
+### AliNet with self-propagation
+
+To run AliNet + SPA on DBP15K ZH-EN, please enter the folder "alinet_spa" and execute the following script:
+
+```bash
+python main.py --input ../dataset/dbp15k/zh_en/mtranse/0_3/ --alpha 0.1
+```
+
+To disable self-propagation, i.e., to run the original AliNet, please execute:
+
+```bash
+python main.py --input ../dataset/dbp15k/zh_en/mtranse/0_3/ --alpha 0.0
 ```
 
 > If you have any difficulty or question in running code and reproducing experimental results, please email to zqsun.nju@gmail.com or jchuang.nju@gmail.com.
